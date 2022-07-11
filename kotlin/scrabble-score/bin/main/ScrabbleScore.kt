@@ -11,11 +11,5 @@ object ScrabbleScore {
         else -> 0
     }
 
-    fun scoreWord(word: String): Int {
-        var ret = 0;
-        for (char in word) {
-            ret += scoreLetter(char)
-        }
-        return ret
-    }
+    fun scoreWord(word: String): Int =  word.map { scoreLetter(it)} .sum()
 }

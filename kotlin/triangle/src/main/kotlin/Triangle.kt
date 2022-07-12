@@ -1,17 +1,15 @@
 class Triangle<out T : Number>(val a: T, val b: T, val c: T) {
     init {
-        if (a.toInt() + c.toInt() < b.toInt()) {
+        if (a.toDouble() + c.toDouble() < b.toDouble()) {
             throw IllegalArgumentException()    
         }
-        if (a.toInt() + b.toInt() < c.toInt()) {
+        if (a.toDouble() + b.toDouble() < c.toDouble()) {
             throw IllegalArgumentException()    
         }
-        if (b.toInt() + c.toInt() < a.toInt()) {
+        if (b.toDouble() + c.toDouble() < a.toDouble()) {
             throw IllegalArgumentException()    
         }
-        if ((a == 0) and (b == 0) and (c ==0)) {
-            throw IllegalArgumentException()       
-        }
+        require(!((a == 0) and (b == 0) and (c ==0)))
     }
     val isEquilateral: Boolean = (a == b) and (b == c)
     val isIsosceles: Boolean = (a == b) or (b == c) or (c == a)

@@ -7,5 +7,5 @@ class Triangle<out T : Number>(val a: T, val b: T, val c: T) {
     }
     val isEquilateral: Boolean = (a == b) and (b == c)
     val isIsosceles: Boolean = (a == b) or (b == c) or (c == a)
-    val isScalene: Boolean = !isEquilateral and !isIsosceles 
+    val isScalene: Boolean = !isIsosceles 
 }

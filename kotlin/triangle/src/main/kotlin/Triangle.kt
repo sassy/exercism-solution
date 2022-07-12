@@ -1,10 +1,8 @@
 class Triangle<out T : Number>(val a: T, val b: T, val c: T) {
     init {
-        if (!((a.toDouble() + c.toDouble() > b.toDouble()) 
+        require((a.toDouble() + c.toDouble() > b.toDouble()) 
             and (a.toDouble() + b.toDouble() > c.toDouble()) 
-            and (b.toDouble() + c.toDouble() > a.toDouble()))) {
-            throw IllegalArgumentException()    
-        }
+            and (b.toDouble() + c.toDouble() > a.toDouble()))
         require(!((a == 0) and (b == 0) and (c ==0)))
     }
     val isEquilateral: Boolean = (a == b) and (b == c)

@@ -4,8 +4,7 @@ class RnaTranscription {
   String toRna(String dna) {
     String result = '';
     dna.split('').forEach((String elem) {
-      var ret = _table[elem];
-      if (ret != null) result += ret;
+      result += _table[elem] ?? '';
     });
     return result;
   }

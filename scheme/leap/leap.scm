@@ -2,9 +2,9 @@
 
 (define (leap-year? year)
   (if 
-    (= (remainder year 4) 0)
+    (= (modulo year 4) 0)
     (if
-      (or (= (remainder year 400) 0)  (not (= (remainder year 100) 0)))
+      (or (= (modulo year 400) 0)  (not (= (modulo year 100) 0)))
       #t
       #f
     )
